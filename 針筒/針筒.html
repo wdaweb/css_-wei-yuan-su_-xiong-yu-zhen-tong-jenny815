@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main {
+      height: 100px;
+      width: 400px;
+      border: 1px solid rgb(206, 205, 205);
+      position: relative;
+    }
+
+    .main::before {
+      content: '';
+      height: 100%;
+      width: 175px;
+      position: absolute;
+      background: linear-gradient(rgb(245, 245, 245), rgb(224, 224, 224), rgb(245, 245, 245));
+    }
+
+    .main::after {
+      content: '';
+      height: 100%;
+      width: 176px;
+      background: linear-gradient(rgb(232, 245, 159), rgb(217, 226, 166), rgb(232, 245, 159));
+      position: absolute;
+      left: 56%;
+    }
+
+    .middle {
+      width: 50px;
+      height: 100px;
+      background: black;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .middle::before {
+      content: '';
+      height: 75%;
+      width: 80px;
+      border: 1px solid rgb(161, 159, 159);
+      background: linear-gradient(rgb(245, 245, 245), rgb(224, 224, 224), rgb(245, 245, 245));
+      position: absolute;
+      left: 400%;
+      top: 10px;
+      border-radius: 5px;
+    }
+
+    .middle::after {
+      content: '';
+      height: 80%;
+      width: 60px;
+      border: 1px solid rgb(161, 159, 159);
+      background: linear-gradient(rgb(245, 245, 245), rgb(224, 224, 224), rgb(245, 245, 245));
+      position: absolute;
+      left: -475%;
+      top: 10px;
+    }
+
+    .hand {
+      width: 100px;
+      height: 2px;
+      background: rgb(155, 155, 155);
+      position: absolute;
+      left: 114%;
+      top: 50%;
+    }
+
+    .hand::before {
+      content: '';
+      width: 50px;
+      height: 100px;
+      border-radius: 5px;
+      border: 1px solid rgb(161, 159, 159);
+      background: linear-gradient(rgb(245, 245, 245), rgb(224, 224, 224), rgb(245, 245, 245));
+      position: absolute;
+      left: -550%;
+      top: -50px;
+    }
+
+    .scale1 {
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale1::before {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(172, 170, 170);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale1::after {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(172, 170, 170);
+      position: absolute;
+      left: 26px;
+    }
+
+    .scale2 {
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 52px;
+    }
+
+    .scale2::before {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale2::after {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 26px;
+    }
+
+    .scale3 {
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 91px;
+    }
+
+    .scale3::before {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale3::after {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 26px;
+    }
+
+    .scale4 {
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 130px;
+    }
+
+    .scale4::before {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale4::after {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 26px;
+    }
+
+    .scale5 {
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 238px;
+      z-index: 1;
+    }
+
+    .scale5::before {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale5::after {
+      content: '';
+      width: 3px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 26px;
+    }
+
+    .scale6 {
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 277px;
+      z-index: 1;
+    }
+
+    .scale6::before {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale6::after {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 26px;
+    }
+
+    .scale7 {
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 316px;
+      z-index: 1;
+    }
+
+    .scale7::before {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale7::after {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 26px;
+    }
+
+    .scale8 {
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 355px;
+      z-index: 1;
+    }
+
+    .scale8::before {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 13px;
+    }
+
+    .scale8::after {
+      content: '';
+      width: 2px;
+      height: 15px;
+      background: rgb(167, 166, 166);
+      position: absolute;
+      left: 26px;
+    }
+
+    p {
+      position: absolute;
+      top: 50px;
+      color: rgb(145, 141, 141);
+      font-size: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="main">
+    <p>Made in Taiwan</p>
+    <div class="scale1"></div>
+    <div class="scale2"></div>
+    <div class="scale3"></div>
+    <div class="scale4"></div>
+    <div class="scale5"></div>
+    <div class="scale6"></div>
+    <div class="scale7"></div>
+    <div class="scale8"></div>
+    <div class="middle"></div>
+    <div class="hand"></div>
+  </div>
+
+</body>
+
+</html>
